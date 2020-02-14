@@ -29,5 +29,7 @@ router.register(r'task', views.TaskViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^admin/', admin.site.urls),    
+    url(r'^admin/', admin.site.urls),   
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^register/$', views.CreateUserView.as_view(), name='user'), 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

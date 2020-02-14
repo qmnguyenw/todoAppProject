@@ -125,4 +125,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT = '/task'
+# after successful login user will redirect to task end point
+LOGIN_REDIRECT_URL = '/task'

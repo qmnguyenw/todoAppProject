@@ -1,0 +1,16 @@
+
+    ^ ^task/$ [name='task-list']
+    ^ ^task\.(?P<format>[a-z0-9]+)/?$ [name='task-list']
+    ^ ^task/(?P<pk>[^/.]+)/$ [name='task-detail']
+    ^ ^task/(?P<pk>[^/.]+)\.(?P<format>[a-z0-9]+)/?$ [name='task-detail']
+    ^ ^$ [name='api-root']
+    ^ ^\.(?P<format>[a-z0-9]+)/?$ [name='api-root']
+    ^admin/
+    ^api-auth/ ^login/$ [name='login']
+    ^api-auth/ ^logout/$ [name='logout']
+    ^register/$ [name='user']
+    ^media/(?P<path>.*)$
+
+
+    admin - 1
+
