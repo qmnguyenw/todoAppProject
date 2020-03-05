@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todoApp',
     'rest_framework',
+    # 'rest_framework.authtoken',
     'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -127,3 +130,8 @@ MEDIA_URL = '/media/'
 
 # after successful login user will redirect to task end point
 LOGIN_REDIRECT_URL = '/task'
+
+# ADD CORS TO FRONTEND CAN ACCESS BACKEND
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:4200"
+]
