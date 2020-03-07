@@ -12,8 +12,8 @@ from django.contrib.auth.models import User
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    authentication_classes = (TokenAuthentication, SessionAuthentication)
-    # authentication_classes = (BasicAuthentication, SessionAuthentication)
+    # authentication_classes = (TokenAuthentication, SessionAuthentication)
+    authentication_classes = (BasicAuthentication, SessionAuthentication)
     # only Authenticated User can perform CRUD operation
     permission_classes = (IsAuthenticated,)
     queryset = Task.objects.all()  # use filter and ordering so remove order_by
@@ -32,6 +32,7 @@ class TaskViewSet(viewsets.ModelViewSet):
 # class CompletedTaskViewSet(viewsets.ModelViewSet):
 #     queryset = Task.objects.all().order_by('-date_created').filter(completed=True)
 #     serializer_class = TaskSerializer
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()

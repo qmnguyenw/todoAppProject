@@ -4,12 +4,18 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
+
 class TaskSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField(max_length=None, use_url=True, default='images/none/none.jpg')
-    doc = serializers.FileField(max_length=None, use_url=True, default='docs/none/none.txt')
+    image = serializers.ImageField(
+        max_length=None, use_url=True, default='images/none/none.jpg')
+    doc = serializers.FileField(
+        max_length=None, use_url=True, default='docs/none/none.txt')
+
     class Meta:
         model = Task
-        fields = ('id', 'task_name', 'task_desc', 'completed', 'date_created', 'image', 'doc')
+        fields = ('id', 'task_name', 'task_desc',
+                  'completed', 'date_created', 'image', 'doc')
+
 
 class UserSerializer(serializers.ModelSerializer):
     # password = serializers.CharField(write_only=True)
@@ -31,7 +37,7 @@ class UserSerializer(serializers.ModelSerializer):
     #     fields = ('username', 'password')
     #     # extra_kwargs = {'password': {'write_only': True, 'required': True}}
 
-    class Meta: 
+    class Meta:
         model = User
         fields = ('username', 'password')
         extra_kwargs = {'password': {'write_only': True, 'required': True}}

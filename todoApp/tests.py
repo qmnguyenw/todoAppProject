@@ -17,7 +17,7 @@ class PublicTasksApiTests(TestCase):
 
     def test_login_required(self):
         """Test that login is required to access the endpoint"""
-        response = self.client.get(reverse('task-list'))
+        response = self.client.get(reverse('Task-list'))
 
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
