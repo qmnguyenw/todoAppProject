@@ -6,11 +6,16 @@ from rest_framework.authtoken.models import Token
 
 
 class TaskSerializer(serializers.ModelSerializer):
+<<<<<<< HEAD
     image = serializers.ImageField(
         max_length=None, use_url=True, default='images/none/none.jpg')
     doc = serializers.FileField(
         max_length=None, use_url=True, default='docs/none/none.txt')
 
+=======
+    image = serializers.ImageField(max_length=None, use_url=True, default='images/none/none.jpg')
+    doc = serializers.FileField(max_length=None, use_url=True, default='docs/none/none.txt')
+>>>>>>> 01f0b9a05d2c9013f894ed51652932ce36af0dda
     class Meta:
         model = Task
         fields = ('id', 'task_name', 'task_desc',
